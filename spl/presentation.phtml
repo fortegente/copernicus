@@ -1,0 +1,41 @@
+<?php
+    include "spl.php";
+    $object = new SplLinkedList();
+?>
+<head>
+    <style>
+        .active {
+            border: 1px solid black;
+            background-color: grey;
+        }
+        .inactive {
+            border: 1px solid black;
+            background-color: pink;
+        }
+    </style>
+</head>
+<table width="100%" style="td:first{color:red}">
+    <colgroup>
+        <?php foreach ($object->getSplObject() as $key => $value) : ?>
+            <col width="<?php echo 100/$object->getSplObject()->count() . '%' ?>"/>
+        <?php endforeach ?>
+        <col width="100%"/>
+    </colgroup>
+    <tr>
+        <?php foreach ($object->getSplObject() as $key => $value) : ?>
+            <td class=<?php echo ($object->getCurrentElement() == $value) ? "active" : "inactive" ?> height="60px" align="center"><?php echo $value ?></td>
+        <?php endforeach ?>
+    </tr>
+</table>
+</br></br></br>
+<form method="post">
+    <input type="submit" name="prepend" value="append">
+    <input type="submit" name="append" value="prepend"></br></br>
+    <?php if (!$object->isObjectEmpty()) : ?>
+        <input type="submit" name="removeFirst" value="remove first">
+        <input type="submit" name="removeLast" value="remove last">
+        </br></br>
+        <input type="submit" name="prev" value="Move left">
+        <input type="submit" name="next" value="Move right">
+    <?php endif ?>
+</form>

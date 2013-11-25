@@ -1,0 +1,64 @@
+<?php include "compare.php"; ?>
+<head>
+    <style>
+        table {
+            font-size: 30px;
+        }
+        table td {
+            padding: 12px;
+        }
+    </style>
+</head>
+<body>
+    <?php $firstResult = native(50); ?>
+    <?php $secondResult = native(1000); ?>
+    <?php $thirdResult = native(10000); ?>
+    <?php $splFirstResult = spl(50); ?>
+    <?php $splSecondResult = spl(1000); ?>
+    <?php $splThirdResult = spl(10000); ?>
+    <?php $oopFirstResult = oop(50); ?>
+    <?php $oopSecondResult = oop(1000); ?>
+    <?php $oopThirdResult = oop(10000); ?>
+    <table border="1">
+        <h1>Native:</h1>
+        <tr><th></th><th>50 elements</th><th>1000 elements</th><th>10000 elements</th></tr>
+        <tr>
+            <td>memory</td>
+            <td><?php echo $firstResult["memory"] / 1024; ?></td>
+            <td><?php echo $secondResult["memory"] / 1024; ?></td>
+            <td><?php echo $thirdResult["memory"] / 1024; ?></td></tr>
+        <tr>
+            <td>time</td>
+            <td><?php echo $firstResult["totalTime"]; ?></td>
+            <td><?php echo $secondResult["totalTime"]; ?></td>
+            <td><?php echo $thirdResult["totalTime"]; ?></td></tr>
+    </table>
+    <table border="1">
+        <h1>SPL:</h1>
+        <tr><th></th><th>50 elements</th><th>1000 elements</th><th>10000 elements</th></tr>
+        <tr>
+            <td>memory</td>
+            <td><?php echo $splFirstResult["memory"] / 1024; ?></td>
+            <td><?php echo $splSecondResult["memory"] / 1024; ?></td>
+            <td><?php echo $splThirdResult["memory"] / 1024; ?></td></tr>
+        <tr>
+            <td>time</td>
+            <td><?php echo $splFirstResult["totalTime"]; ?></td>
+            <td><?php echo $splSecondResult["totalTime"]; ?></td>
+            <td><?php echo $splThirdResult["totalTime"]; ?></td></tr>
+    </table>
+    <table border="1">
+        <h1>OOP:</h1>
+        <tr><th></th><th>50 elements</th><th>1000 elements</th><th>10000 elements</th></tr>
+        <tr>
+            <td>memory</td>
+            <td><?php echo $oopFirstResult["memory"] / 1024; ?></td>
+            <td><?php echo $oopSecondResult["memory"] / 1024; ?></td>
+            <td><?php echo $oopThirdResult["memory"] / 1024; ?></td></tr>
+        <tr>
+            <td>time</td>
+            <td><?php echo $oopFirstResult["totalTime"]; ?></td>
+            <td><?php echo $oopSecondResult["totalTime"]; ?></td>
+            <td><?php echo $oopThirdResult["totalTime"]; ?></td></tr>
+    </table>
+</body>

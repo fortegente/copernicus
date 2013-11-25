@@ -1,0 +1,32 @@
+<head>
+    <style>
+        body {
+            font-size: 40px;
+        }
+        span {
+            font-weight: bold;
+            font-size: 40px;
+            color: rgb(255, 32, 71);
+        }
+    </style>
+</head>
+<body>
+<?php $queue = [111, 222, 333]; ?>
+Initial queue:
+<span><?php echo implode(" ", $queue); ?></span></br>
+
+<?php array_unshift($queue, "444") ?>
+Add new element to queue:
+<span><?php echo implode(" ", $queue); ?></span></br>
+
+<?php array_unshift($queue, "555") ?>
+Add new element to queue:
+<span><?php echo implode(" ", $queue); ?></span></br>
+
+Get element (<?php echo array_shift($queue) ?>) from queue:
+<span><?php echo implode(" ", $queue); ?></span></br>
+
+<?php array_unshift($queue, "666") ?>
+Add new element to queue:
+<span><?php echo implode(" ", $queue); ?></span></br>
+</body>

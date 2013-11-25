@@ -1,0 +1,36 @@
+<head>
+    <style>
+        body {
+            font-size: 40px;
+        }
+        span {
+            font-weight: bold;
+            font-size: 40px;
+            color: rgb(255, 32, 71);
+        }
+        .current {
+            color: green;
+        }
+    </style>
+</head>
+<body>
+<?php $list = [111, 222, 333, 444, 555, 666]; ?>
+Initial list:
+<span><?php echo implode(" ", $list); ?></span></br>
+Current element now is: <span class="current"><?php echo current($list)?></span></br></br>
+
+<?php next($list) ?>
+Move to the rigth. Current element now is: <span class="current"><?php echo current($list)?></span></br></br>
+
+<?php next($list) ?>
+Move to the rigth. Current element now is: <span class="current"><?php echo current($list)?></span></br></br>
+
+<?php prev($list) ?>
+Move to the left. Current element now is: <span class="current"><?php echo current($list)?></span></br></br>
+
+<?php end($list) ?>
+Move to the end. Current element now is: <span class="current"><?php echo current($list)?></span></br></br>
+
+<?php reset($list) ?>
+Move to the start. Current element now is: <span class="current"><?php echo current($list)?></span></br></br>
+</body>

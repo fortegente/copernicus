@@ -1,0 +1,32 @@
+<head>
+    <style>
+        body {
+            font-size: 40px;
+        }
+        span {
+            font-weight: bold;
+            font-size: 40px;
+            color: rgb(255, 32, 71);
+        }
+    </style>
+</head>
+<body>
+<?php $stack = [111, 222, 333]; ?>
+Initial stack:
+<span><?php echo implode(" ", $stack); ?></span></br>
+
+<?php array_push($stack, "444") ?>
+Add new element to stack:
+<span><?php echo implode(" ", $stack); ?></span></br>
+
+<?php array_push($stack, "555") ?>
+Add new element to stack:
+<span><?php echo implode(" ", $stack); ?></span></br>
+
+Get element (<?php echo array_pop($stack) ?>) from stack:
+<span><?php echo implode(" ", $stack); ?></span></br>
+
+<?php array_push($stack, "666") ?>
+Add new element to stack:
+<span><?php echo implode(" ", $stack); ?></span></br>
+</body>
