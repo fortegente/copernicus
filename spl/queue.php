@@ -22,7 +22,7 @@ class Queue
     private function _initSplObject()
     {
         $this->_splObject = new SplDoublyLinkedList();
-        //$this->_splObject->setIteratorMode(SplDoublyLinkedList::IT_MODE_LIFO);
+        $this->_splObject->setIteratorMode(SplDoublyLinkedList::IT_MODE_FIFO);
         if (isset($_SESSION['queue'])) {
             $this->getSplObject()->unserialize($_SESSION['queue']);
         }

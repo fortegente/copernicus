@@ -12,8 +12,16 @@ $object = new Stack();
             border: 1px solid black;
             background-color: pink;
         }
+        th {
+            font-size: 25px;
+        }
     </style>
 </head>
+<?php
+foreach($object->getSplObject() as $key => $value) {
+    var_dump($key, $value);
+}
+ ?>
 <table width="100%" style="td:first{color:red}">
     <colgroup>
         <?php foreach ($object->getSplObject() as $key => $value) : ?>
@@ -23,7 +31,12 @@ $object = new Stack();
     </colgroup>
     <tr>
         <?php foreach ($object->getSplObject() as $key => $value) : ?>
-            <td class=<?php echo ($object->getPointer() == $value) ? "active" : "inactive" ?> height="60px" align="center"><?php echo $value ?></td>
+            <th><?php echo $key ?></th>
+        <?php endforeach ?>
+    </tr>
+    <tr>
+        <?php foreach ($object->getSplObject() as $key => $value) : ?>
+            <td class=<?php echo ($object->getPointer() == $value) ? "active" : "inactive" ?> height="60px" align="center"><?php echo $value; ?></td>
         <?php endforeach ?>
     </tr>
 </table>
